@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURELIA — Reservations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#11120f;--cream:#f0ece2;--gold:#b9965b;--line:#d8d0c1}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--dark);font-family:Manrope,sans-serif;font-weight:300}a{text-decoration:none;color:inherit}
+.top{background:var(--dark);color:#fff;height:86px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between}.brand{font:500 30px "Cormorant Garamond";letter-spacing:.12em}.back{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#c9c2b5}
+main{padding:80px 8vw}.eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#9b825a;margin-bottom:16px}h1{font:500 clamp(58px,8vw,110px)/.85 "Cormorant Garamond";margin:0 0 70px}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.room{background:#fff}.room img{width:100%;height:280px;object-fit:cover}.room-body{padding:28px}.room h2{font:500 36px "Cormorant Garamond";margin:0 0 10px}.room p{font-size:13px;line-height:1.7;color:#68655e;min-height:68px}.meta{display:flex;gap:16px;border-top:1px solid #e4dfd5;padding-top:18px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#7e776b}.price{margin-top:22px;font:500 31px "Cormorant Garamond"}.price small{font:12px Manrope;color:#888}
+.reserve{margin-top:80px;background:var(--dark);color:#f2ede4;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:35px}.reserve h2{font:500 60px/0.9 "Cormorant Garamond";margin:0}.form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:#9f9a90}.field input,.field select{background:#191a17;border:1px solid #3a3a35;color:#eee;padding:15px;font:13px Manrope;outline:none}.submit{grid-column:1/-1;background:#dfc596;color:#17150f;border:0;padding:17px;letter-spacing:.2em;text-transform:uppercase;font-size:10px;cursor:pointer}
+.notice{margin-top:15px;color:#aaa59b;font-size:11px;line-height:1.6}.footer{padding:40px 8vw;background:#0b0c0a;color:#777;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:900px){.rooms{grid-template-columns:1fr}.reserve{grid-template-columns:1fr;padding:30px}.form{grid-template-columns:1fr}.field.full{grid-column:auto}main{padding:55px 5vw}}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="index.html">AURELIA</a><a class="back" href="index.html">← Return to estate</a></header>
+<main>
+<div class="eyebrow">Private reservations</div><h1>Choose your<br>residence.</h1>
+<section class="rooms">
+<article class="room"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200" alt="Garden suite"><div class="room-body"><h2>Garden Suite</h2><p>King bedroom, private garden terrace, rainfall shower and curated minibar.</p><div class="meta"><span>65 m²</span><span>2 guests</span><span>Garden</span></div><div class="price">₹28,000 <small>/ night</small></div></div></article>
+<article class="room"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200" alt="Pool villa"><div class="room-body"><h2>Pool Villa</h2><p>Expansive villa with private plunge pool, living room, soaking tub and valley views.</p><div class="meta"><span>110 m²</span><span>3 guests</span><span>Pool</span></div><div class="price">₹46,000 <small>/ night</small></div></div></article>
+<article class="room"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200" alt="Presidential residence"><div class="room-body"><h2>Presidential Residence</h2><p>Our signature residence with two bedrooms, private pool, dining room and panoramic deck.</p><div class="meta"><span>220 m²</span><span>6 guests</span><span>Panorama</span></div><div class="price">₹85,000 <small>/ night</small></div></div></article>
+</section>
+
+<section class="reserve">
+<div><div class="eyebrow">Reservation request</div><h2>Begin your<br>escape.</h2><p class="notice">Demo pricing for the concept website. Replace rates, taxes, availability and policies with your actual resort data before launch.</p></div>
+<form class="form" onsubmit="event.preventDefault();alert('Reservation request received. Connect this form to your booking system to make it live.');">
+<div class="field"><label>Check-in</label><input type="date" required></div><div class="field"><label>Check-out</label><input type="date" required></div>
+<div class="field"><label>Guests</label><select><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5+ Guests</option></select></div>
+<div class="field"><label>Residence</label><select><option>Garden Suite</option><option>Pool Villa</option><option>Presidential Residence</option></select></div>
+<div class="field full"><label>Guest name</label><input type="text" placeholder="Your full name" required></div>
+<div class="field full"><label>Email</label><input type="email" placeholder="you@example.com" required></div>
+<button class="submit" type="submit">Request reservation</button>
+</form>
+</section>
+</main>
+<footer class="footer">AURELIA RESORT · LONAVALA · MAHARASHTRA · 2026</footer>
+</body>
+</html>
